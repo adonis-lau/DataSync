@@ -12,6 +12,13 @@ import java.util.List;
  */
 public interface EnterpriseLabelService {
     /**
+     * 查询一条数据
+     * @param nasrdm
+     * @return
+     */
+    EnterpriseLabel findOneByNasrdm(String nasrdm);
+
+    /**
      * 保存一列数据
      * @param enterpriseLabelList
      */

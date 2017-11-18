@@ -24,7 +24,7 @@ public class TEnterpriseAddressServiceTest {
     TEnterpriseAddressService enterpriseAddressService;
 
     @Test
-    public void findOne() throws Exception {
+    public void findOne() {
         TEnterpriseAddress enterpriseAddress = enterpriseAddressService.findOne("5555");
         System.out.println(enterpriseAddress);
     }

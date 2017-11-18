@@ -22,6 +22,17 @@ public class EnterpriseLabelServiceImpl implements EnterpriseLabelService {
     private EnterpriseLabelDao enterpriseLabelDao;
 
     /**
+     * 查询一条数据
+     *
+     * @param nasrdm
+     * @return
+     */
+    @Override
+    public EnterpriseLabel findOneByNasrdm(String nasrdm) {
+        return enterpriseLabelDao.findOneByNasrdm(nasrdm);
+    }
+
+    /**
      * 保存一列数据
      *
      * @param enterpriseLabelList

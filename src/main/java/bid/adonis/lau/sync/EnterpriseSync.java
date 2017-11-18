@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.data.domain.Sort;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,14 +55,19 @@ public class EnterpriseSync {
         //每次处理5000条数据
         Long times = count / 5000;
         Long last = count % 5000;
-        logger.info("总共需要循环{}次，剩余{}条数据");
-        for (Long current = 0L; current <= times; current++) {
-            List<HTemp2015> before = hTemp2015Service.findPage(PageRequestUtils.buildPageRequest(2, 500)).getContent();
+        logger.info("总共需要循环{}次",times);
+        for (Integer current = 0; current <= times; current++) {
+            Sort sort = new Sort(Sort.Direction.ASC, "tjrq");
+            List<HTemp2015> before = hTemp2015Service.findPage(PageRequestUtils.buildPageRequestWithSort(current, 5000, sort)).getContent();
             ArrayList<EnterpriseLabel> enterpriseLabelAfter = new ArrayList<>();
             ArrayList<EnterpriseInfoTmp> enterpriseInfoTmpAfter = new ArrayList<>();
             for (HTemp2015 temp : before) {
                 //处理enterpriseLabel表数据
-                EnterpriseLabel enterpriseLabel = new EnterpriseLabel();
+                EnterpriseLabel enterpriseLabel = null;
+                enterpriseLabel = enterpriseLabelService.findOneByNasrdm(temp.getNasrdm());
+                if (enterpriseLabel == null) {
+                    enterpriseLabel = new EnterpriseLabel();
+                }
                 enterpriseLabel.setNasrdm(temp.getNasrdm());
                 enterpriseLabel.setWdhy(temp.getSwF10());
                 enterpriseLabel.setWdhylx(temp.getSwF11());
@@ -73,6 +79,7 @@ public class EnterpriseSync {
                 enterpriseLabel.setTzfgb(getTzfgb(temp.getSwF24(), tzfgbMap));
                 enterpriseLabel.setYzsdjy(temp.getSwF14());
                 enterpriseLabel.setYzsdzc(temp.getSwF13());
+                enterpriseLabel.setTjrq("2015");
                 enterpriseLabelAfter.add(enterpriseLabel);
 
                 //处理enterpriseInfoTmp表数据

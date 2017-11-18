@@ -1,5 +1,6 @@
 package bid.adonis.lau.entity;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;

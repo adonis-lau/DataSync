@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @date Created in 2017/11/18 11:26
  */
 @Service("tEnterpriseAddressService")
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 public class TEnterpriseAddressServiceImpl implements TEnterpriseAddressService {
 
     @Autowired

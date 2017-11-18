@@ -23,7 +23,7 @@ public class EnterpriseSync {
     private final static Logger logger = LoggerFactory.getLogger(EnterpriseSync.class);
 
     public static void main(String[] args) {
-//
+
         ApplicationContext ac = new ClassPathXmlApplicationContext("spring-config.xml");
 
         logger.info("配置文件读取成功，开始注入bean");

@@ -1,6 +1,8 @@
 package bid.adonis.lau.service;
 
 import bid.adonis.lau.entity.HTemp2015;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
 
@@ -14,5 +16,17 @@ public interface HTemp2015Service {
      * 查询所有数据
      * @return
      */
-    public List<HTemp2015> findAll();
+    List<HTemp2015> findAll();
+
+    /**
+     * 分页查询
+     * @return
+     */
+    Page<HTemp2015> findPage(PageRequest pageRequest);
+
+    /**
+     * 查询总条数
+     * @return
+     */
+    Long count();
 }

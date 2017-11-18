@@ -1,6 +1,6 @@
 package bid.adonis.lau.service;
 
-import bid.adonis.lau.entity.Tzfgb;
+import bid.adonis.lau.entity.EnterpriseInfoTmp;
 
 import java.util.List;
 
@@ -9,16 +9,16 @@ import java.util.List;
  * @eamil adonis.lau.dev@gmail.com
  * @date Created in 2017/11/18 13:15
  */
-public interface TzfgbService {
+public interface EnterpriseInfoTmpService {
     /**
      * 查询所有
      * @return
      */
-    List<Tzfgb> findAll();
+    List<EnterpriseInfoTmp> findAll();
 
     /**
      * 保存一列数据
-     * @param tzfgbList
+     * @param enterpriseInfoTmpList
      */
-    void save(List<Tzfgb> tzfgbList);
+    void save(List<EnterpriseInfoTmp> enterpriseInfoTmpList);
 }

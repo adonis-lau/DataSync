@@ -14,7 +14,6 @@ import javax.persistence.Table;
 public class Kjqy {
     @Id
     private String name;
-    private String nsrdm;
 
     public String getName() {
         return name;
@@ -22,13 +21,5 @@ public class Kjqy {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getNsrdm() {
-        return nsrdm;
-    }
-
-    public void setNsrdm(String nsrdm) {
-        this.nsrdm = nsrdm;
     }
 }

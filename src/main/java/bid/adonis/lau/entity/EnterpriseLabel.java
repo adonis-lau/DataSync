@@ -1,8 +1,6 @@
 package bid.adonis.lau.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @author Adonis Lau
@@ -13,7 +11,9 @@ import javax.persistence.Table;
 @Table(name = "T_ENTERPRISE_LABEL")
 public class EnterpriseLabel {
     @Id
-    private String id;
+    @SequenceGenerator(name="SEQ_T_ENTERPRISE_LABEL", sequenceName="SEQ_T_ENTERPRISE_LABEL",allocationSize=1)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="SEQ_T_ENTERPRISE_LABEL")
+    private Long id;
     /**
      * 纳税人代码
      */
@@ -66,12 +66,21 @@ public class EnterpriseLabel {
      * 投资方国别
      */
     private String tzfgb;
+    /**
+     * 一轴三带经营地址
+     */
+    private String yzsdjy;
+    /**
+     * 一轴三带注册地址
+     */
+    private String yzsdzc;
 
-    public String getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -177,5 +186,21 @@ public class EnterpriseLabel {
 
     public void setTzfgb(String tzfgb) {
         this.tzfgb = tzfgb;
+    }
+
+    public String getYzsdjy() {
+        return yzsdjy;
+    }
+
+    public void setYzsdjy(String yzsdjy) {
+        this.yzsdjy = yzsdjy;
+    }
+
+    public String getYzsdzc() {
+        return yzsdzc;
+    }
+
+    public void setYzsdzc(String yzsdzc) {
+        this.yzsdzc = yzsdzc;
     }
 }

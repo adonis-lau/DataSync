@@ -14,5 +14,5 @@ public interface HTempService {
      * 查询所有数据
      * @return
      */
-    public List<HTemp> findAll();
+    List<HTemp> findAll();
 }

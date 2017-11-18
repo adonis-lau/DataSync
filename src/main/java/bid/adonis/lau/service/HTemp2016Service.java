@@ -14,5 +14,5 @@ public interface HTemp2016Service {
      * 查询所有数据
      * @return
      */
-    public List<HTemp2016> findAll();
+    List<HTemp2016> findAll();
 }

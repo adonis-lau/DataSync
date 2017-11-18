@@ -19,7 +19,7 @@ import java.util.List;
  * @Eamil: adonis.lau.dev@gmail.com
  * @Date: 2017/10/27 23:44
  */
-public class ExcelUtil {
+public class ExcelUtils {
 
     private static final String EXTENSION_XLS = "xls";
     private static final String EXTENSION_XLSX = "xlsx";

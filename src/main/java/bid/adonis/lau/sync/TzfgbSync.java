@@ -2,7 +2,7 @@ package bid.adonis.lau.sync;
 
 import bid.adonis.lau.entity.Tzfgb;
 import bid.adonis.lau.service.TzfgbService;
-import bid.adonis.lau.utisl.ExcelUtil;
+import bid.adonis.lau.utisl.ExcelUtils;
 import org.apache.xmlbeans.impl.piccolo.io.FileFormatException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +30,7 @@ public class TzfgbSync {
 
         TzfgbService tzfgbService = (TzfgbService) ac.getBean("tzfgbService");
 
-        List<List<String>> lists = ExcelUtil.readExcel("F:\\Work\\Outside\\静安决策\\国别.xlsx");
+        List<List<String>> lists = ExcelUtils.readExcel("F:\\Work\\Outside\\静安决策\\国别.xlsx");
 
         ArrayList<Tzfgb> tzfgbList = new ArrayList<>();
 

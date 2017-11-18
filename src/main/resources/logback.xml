@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d %-5p] [%t] %c{3\} - %m%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <logger name="bid.adonis.lau" level="DEBUG"/>
+    <logger name="org.springframework.jdbc.core.JdbcTemplate" level="DEBUG"/>
+
+    <root level="INFO">
+        <!-- 设置接收所有输出的通道 -->
+        <appender-ref ref="CONSOLE"/>
+        <!--
+                <appender-ref ref="file"/>-->
+    </root>
+</configuration>

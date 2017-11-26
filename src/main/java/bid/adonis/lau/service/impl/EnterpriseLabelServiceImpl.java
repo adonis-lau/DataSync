@@ -41,4 +41,16 @@ public class EnterpriseLabelServiceImpl implements EnterpriseLabelService {
     public void save(List<EnterpriseLabel> enterpriseLabelList) {
         enterpriseLabelDao.save(enterpriseLabelList);
     }
+
+    /**
+     * 通过纳税人代码和添加日期查询一条数据
+     *
+     * @param nasrdm
+     * @param tjrq
+     * @return
+     */
+    @Override
+    public EnterpriseLabel findOneByNasrdmAndTjrq(String nasrdm, String tjrq) {
+        return enterpriseLabelDao.findOneByNasrdmAndTjrq(nasrdm,tjrq);
+    }
 }

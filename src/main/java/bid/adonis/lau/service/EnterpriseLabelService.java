@@ -23,4 +23,12 @@ public interface EnterpriseLabelService {
      * @param enterpriseLabelList
      */
     void save(List<EnterpriseLabel> enterpriseLabelList);
+
+    /**
+     * 通过纳税人代码和添加日期查询一条数据
+     * @param nasrdm
+     * @param tjrq
+     * @return
+     */
+    EnterpriseLabel findOneByNasrdmAndTjrq(String nasrdm, String tjrq);
 }

@@ -64,7 +64,7 @@ public class EnterpriseSync {
             for (HTemp2015 temp : before) {
                 //处理enterpriseLabel表数据
                 EnterpriseLabel enterpriseLabel = null;
-                enterpriseLabel = enterpriseLabelService.findOneByNasrdm(temp.getNasrdm());
+                enterpriseLabel = enterpriseLabelService.findOneByNasrdmAndTjrq(temp.getNasrdm(),"%2015%");
                 if (enterpriseLabel == null) {
                     enterpriseLabel = new EnterpriseLabel();
                 }
